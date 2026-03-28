@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Background — clean white */
+  --color-bg: #FFFFFF;
+  --color-surface: #FFFFFF;
+  --color-border: #E5E5E5;
+
+  /* Text — high contrast, easy to read */
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #555555;
+  --color-text-muted: #999999;
+
+  /* Accent — dark for primary actions */
+  --color-accent: #1A1A1A;
+  --color-accent-hover: #333333;
+  --color-accent-light: #F5F5F5;
+
+  /* Subject Colors — soft pastels */
+  --color-subject-maths: #E8EDFF;
+  --color-subject-science: #E2F8EC;
+  --color-subject-languages: #FFF4D9;
+  --color-subject-history: #FFE8E8;
+  --color-subject-arts: #EDE6FF;
+  --color-subject-general: #E3F1FF;
+
+  /* Card pastels — light and airy */
+  --color-pastel-blue: #EBF3FF;
+  --color-pastel-green: #E8FAF0;
+  --color-pastel-yellow: #FFFAE8;
+  --color-pastel-pink: #FFECF0;
+  --color-pastel-purple: #F2ECFF;
+  --color-pastel-orange: #FFF3E8;
+  --color-pastel-teal: #E5F7F4;
+  --color-pastel-rose: #FFF0F3;
+
+  /* Feedback */
+  --color-success: #34C770;
+  --color-warning: #F5B800;
+  --color-error: #EF4444;
+
+  /* Gamification */
+  --color-xp: #1A1A1A;
+  --color-streak: #E8875A;
+
+  /* Dark mode */
+  --color-dark-bg: #111111;
+  --color-dark-surface: #1A1A1A;
+  --color-dark-border: #333333;
+  --color-dark-text-primary: #EEEEEE;
+  --color-dark-text-secondary: #999999;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-pixel: 'Press Start 2P', 'JetBrains Mono', monospace;
+
+  /* Spacing */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dark body, .dark {
+  color: var(--color-dark-text-primary);
+  background-color: var(--color-dark-bg);
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 2px; }
+.dark ::-webkit-scrollbar-thumb { background: var(--color-dark-border); }
+
+::selection { background: #E8F0FE; color: #1A1A1A; }
+
+.font-pixel {
+  font-family: var(--font-pixel);
+  letter-spacing: 0.05em;
+}
