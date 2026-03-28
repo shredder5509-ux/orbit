@@ -19,7 +19,9 @@ const TOTAL_STEPS = 4
 
 const curriculumOptions: { value: Curriculum; label: string }[] = [
   { value: 'gcse', label: 'UK GCSE' },
+  { value: 'igcse', label: 'IGCSE (Cambridge International)' },
   { value: 'a-level', label: 'UK A-Level' },
+  { value: 'ib', label: 'IB (International Baccalaureate)' },
   { value: 'us-middle', label: 'US Middle School' },
   { value: 'us-high', label: 'US High School' },
   { value: 'custom', label: 'Custom / Other' },

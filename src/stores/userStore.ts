@@ -1,11 +1,13 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
-export type Curriculum = 'gcse' | 'a-level' | 'us-middle' | 'us-high' | 'custom'
+export type Curriculum = 'gcse' | 'igcse' | 'a-level' | 'ib' | 'us-middle' | 'us-high' | 'custom'
 
 export const CURRICULUM_LABELS: Record<Curriculum, string> = {
   'gcse': 'UK GCSE',
+  'igcse': 'IGCSE (Cambridge International)',
   'a-level': 'UK A-Level',
+  'ib': 'IB (International Baccalaureate)',
   'us-middle': 'US Middle School',
   'us-high': 'US High School',
   'custom': 'Custom / Other',
