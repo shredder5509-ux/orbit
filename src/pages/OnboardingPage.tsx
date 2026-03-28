@@ -46,7 +46,11 @@ export function OnboardingPage() {
   const [isExtractingTimetable, setIsExtractingTimetable] = useState(false)
 
   const handlePhotoUpload = async (file: File) => {
-    if (!apiKey) return
+    const currentKey = apiKey || useSettingsStore.getState().apiKey
+    if (!currentKey) {
+      alert('Please enter your API key first to scan photos.')
+      return
+    }
     setIsExtractingTimetable(true)
     try {
       const reader = new FileReader()
@@ -186,10 +190,22 @@ export function OnboardingPage() {
                 <p className="text-xs text-text-muted">Reading your timetable...</p>
               </div>
             )}
+            {!apiKey && (
+              <div className="mb-4 max-w-xs mx-auto">
+                <Input
+                  label="Anthropic API Key (for photo scan)"
+                  type="password"
+                  value={apiKey}
+                  onChange={(e) => useSettingsStore.getState().setApiKey(e.target.value)}
+                  placeholder="sk-ant-..."
+                />
+                <p className="text-[10px] text-text-muted mt-1">Needed to scan your timetable photo. You can also fill it in manually below.</p>
+              </div>
+            )}
             <TimetableGrid
               timetable={timetable}
               onCellChange={setTimetableCell}
-              onPhotoUpload={apiKey ? handlePhotoUpload : undefined}
+              onPhotoUpload={handlePhotoUpload}
               compact
             />
             {subjects.length > 0 && (
