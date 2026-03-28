@@ -74,7 +74,7 @@ export function FocusModePage() {
   const [sessionsCompleted, setSessions] = useState(0)
   const [totalStudied, setTotalStudied] = useState(0)
   const [volume, setVolume] = useState(0.5)
-  const intervalRef = useRef<ReturnType<typeof setInterval>>()
+  const intervalRef = useRef<ReturnType<typeof setInterval>>(undefined)
 
   const { studyMins, breakMins } = PRESETS[preset]
 

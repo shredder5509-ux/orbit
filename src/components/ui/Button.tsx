@@ -1,4 +1,5 @@
-import { ButtonHTMLAttributes, forwardRef } from 'react'
+import type { ButtonHTMLAttributes } from 'react'
+import { forwardRef } from 'react'
 import { motion } from 'framer-motion'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
