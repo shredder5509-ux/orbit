@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Plus, ChevronDown, ChevronRight, Clock, Loader2, BookOpen, ArrowRight, X, FileText, ClipboardList, Target, Focus, Layers, StickyNote, GraduationCap, Zap, PenTool, Calculator, CheckSquare, Quote, MessageSquare, GitCompare, Brain, Globe, Beaker, Briefcase, Camera, ShoppingBag, Users as UsersIcon } from 'lucide-react'
+import { Plus, ChevronDown, ChevronRight, Clock, Loader2, BookOpen, ArrowRight, X, FileText, ClipboardList, Target, Focus, Layers, StickyNote, GraduationCap, Zap, PenTool, Calculator, CheckSquare, Quote, MessageSquare, GitCompare, Brain, Globe, Beaker, Briefcase, Camera, ShoppingBag, Users as UsersIcon, Swords, Timer, Map, Heart, FileBarChart, Archive, Castle, Play, AlertCircle, HelpCircle } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { Card } from '../components/ui/Card'
 import { Button } from '../components/ui/Button'
@@ -328,6 +328,16 @@ export function HomePage() {
               { icon: StickyNote, label: 'Spec', to: '/curriculum', pastel: '#FFECF0' },
               { icon: ShoppingBag, label: 'Shop', to: '/shop', pastel: '#FFF3E8' },
               { icon: UsersIcon, label: 'Friends', to: '/friends', pastel: '#E8F0FE' },
+              { icon: Swords, label: 'Battle', to: '/battle', pastel: '#FFE8EC' },
+              { icon: Zap, label: 'Speed', to: '/speed', pastel: '#FFF8E1' },
+              { icon: UsersIcon, label: 'Room', to: '/study-room', pastel: '#E8FAF0' },
+              { icon: Map, label: 'Map', to: '/mind-map', pastel: '#F0E6FF' },
+              { icon: Heart, label: 'Anxiety', to: '/anxiety', pastel: '#FFECF0' },
+              { icon: AlertCircle, label: 'Mistakes', to: '/mistakes', pastel: '#FDE8EC' },
+              { icon: Archive, label: 'Vault', to: '/exam-vault', pastel: '#EBF3FF' },
+              { icon: Castle, label: 'Palace', to: '/memory-palace', pastel: '#F0E6FF' },
+              { icon: Play, label: 'Exam Sim', to: '/exam-sim', pastel: '#FFF3E8' },
+              { icon: FileBarChart, label: 'Report', to: '/parent-report', pastel: '#E6F7ED' },
             ].map(({ icon: Icon, label, to, pastel }) => (
               <button
                 key={to}

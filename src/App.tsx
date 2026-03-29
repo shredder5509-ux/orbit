@@ -35,6 +35,16 @@ import { ScienceCalcPage } from './pages/ScienceCalcPage'
 import { ConjugationPage } from './pages/ConjugationPage'
 import { DailyRecapPage } from './pages/DailyRecapPage'
 import { CareerPage } from './pages/CareerPage'
+import { MistakeJournalPage } from './pages/MistakeJournalPage'
+import { BattlePage } from './pages/BattlePage'
+import { SpeedRoundPage } from './pages/SpeedRoundPage'
+import { StudyRoomPage } from './pages/StudyRoomPage'
+import { MindMapPage } from './pages/MindMapPage'
+import { AnxietyToolkitPage } from './pages/AnxietyToolkitPage'
+import { ParentReportPage } from './pages/ParentReportPage'
+import { ExamVaultPage } from './pages/ExamVaultPage'
+import { MemoryPalacePage } from './pages/MemoryPalacePage'
+import { ExamDaySimulatorPage } from './pages/ExamDaySimulatorPage'
 import { SearchModal } from './components/SearchModal'
 import { InstallPrompt } from './components/InstallPrompt'
 import { RetroPlanet } from './components/RetroPlanet'
@@ -130,6 +140,16 @@ function AppRoutes() {
           <Route path="/conjugation" element={<ConjugationPage />} />
           <Route path="/recap" element={<DailyRecapPage />} />
           <Route path="/careers" element={<CareerPage />} />
+          <Route path="/mistakes" element={<MistakeJournalPage />} />
+          <Route path="/battle" element={<BattlePage />} />
+          <Route path="/speed" element={<SpeedRoundPage />} />
+          <Route path="/study-room" element={<StudyRoomPage />} />
+          <Route path="/mind-map" element={<MindMapPage />} />
+          <Route path="/anxiety" element={<AnxietyToolkitPage />} />
+          <Route path="/parent-report" element={<ParentReportPage />} />
+          <Route path="/exam-vault" element={<ExamVaultPage />} />
+          <Route path="/memory-palace" element={<MemoryPalacePage />} />
+          <Route path="/exam-sim" element={<ExamDaySimulatorPage />} />
         </Route>
         <Route path="/session/:uploadId?" element={<StudySessionPage />} />
         <Route path="/focus" element={<FocusModePage />} />

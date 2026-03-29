@@ -37,7 +37,7 @@ export function StudySessionPage() {
   const [searchParams] = useSearchParams()
   const mode = (searchParams.get('mode') || 'homework') as SessionMode
   const navigate = useNavigate()
-  const { tutorName, tutorAvatarId, displayName, addXp } = useUserStore()
+  const { tutorName, tutorAvatarId, displayName, addXp, level } = useUserStore()
   const { apiKey } = useSettingsStore()
   const upload = useUploadStore((s) => s.uploads.find((u) => u.id === uploadId))
 
@@ -89,7 +89,7 @@ export function StudySessionPage() {
       if (!apiKey || !upload) return
 
       const msgs = conversationMessages || messages
-      const systemPrompt = buildSystemPrompt(tutorName, displayName, upload.content, currentPhase, sessionMode, masteredTopics)
+      const systemPrompt = buildSystemPrompt(tutorName, displayName, upload.content, currentPhase, sessionMode, masteredTopics, level)
       const apiMessages = msgs.map((m) => ({ role: m.role, content: m.content }))
 
       setStreaming(true)
@@ -146,7 +146,7 @@ export function StudySessionPage() {
     // Small delay to let state settle, then send first message
     setTimeout(() => {
       const firstPhase = MODE_PHASES[mode][0]
-      const systemPrompt = buildSystemPrompt(tutorName, displayName, upload.content, firstPhase, mode, masteredTopics)
+      const systemPrompt = buildSystemPrompt(tutorName, displayName, upload.content, firstPhase, mode, masteredTopics, level)
       setStreaming(true)
       setStreamingContent('')
 
