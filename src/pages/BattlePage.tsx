@@ -120,15 +120,15 @@ Each question must have exactly 4 options. correctIndex is 0-3.`,
       Math.random() < botAccuracy ? q.correctIndex : (q.correctIndex + 1 + Math.floor(Math.random() * 3)) % 4
     )
 
-    const playerScore = playerAnswers.current.reduce((sum, a, i) =>
+    const pScore = playerAnswers.current.reduce<number>((sum, a, i) =>
       sum + (a === questions[i].correctIndex ? 100 + Math.max(0, Math.round((15 - timeTaken.current[i]) * 5)) : 0), 0)
 
-    const botScore = botAnswers.reduce((sum, a, i) =>
+    const bScore = botAnswers.reduce<number>((sum, a, i) =>
       sum + (a === questions[i].correctIndex ? 100 + Math.floor(Math.random() * 50) : 0), 0)
 
     const battleResult: BattleResult = {
-      playerScore,
-      botScore,
+      playerScore: pScore,
+      botScore: bScore,
       playerAnswers: playerAnswers.current,
       botAnswers,
       timeTaken: timeTaken.current,
@@ -153,7 +153,7 @@ Each question must have exactly 4 options. correctIndex is 0-3.`,
     })
 
     // XP
-    const won = playerScore > botScore
+    const won = pScore > bScore
     addXp(won ? 50 : 20)
   }, [questions, difficulty, subjects, selectedSubject, addMistake, addXp])
 
