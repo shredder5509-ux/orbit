@@ -10,7 +10,7 @@ export function TopBar() {
   const isPro = plan !== 'free'
 
   return (
-    <header className="sticky top-0 z-50 bg-white/30 dark:bg-black/50 backdrop-blur-sm border-b border-white/20 dark:border-white/10">
+    <header className="sticky top-0 z-50 bg-white dark:bg-[#111111] border-b border-border dark:border-dark-border">
       <div className="max-w-[680px] mx-auto flex items-center justify-between px-5 py-2.5">
         <div className="flex items-center gap-2">
           <PixelGem size={12} color="#C8B8F0" />
